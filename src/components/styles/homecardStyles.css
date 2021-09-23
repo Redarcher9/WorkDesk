@@ -1,0 +1,15 @@
+.homecard{
+    height: 600px;
+    background-image: url('../../img/home.jpeg');
+    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    -webkit-filter: grayscale(25%);
+    filter: blur(15%);
+    color:white;
+    object-fit: fill;
+}
+.title{
+    font-size: 80px !important;
+    margin-top:150px !important;
+    margin-left:70px;
+}

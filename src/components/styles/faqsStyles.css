@@ -1,0 +1,9 @@
+#faqtitle{
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    padding: 0px  25px ;
+}
+#faqclass{
+    padding:25px;
+}

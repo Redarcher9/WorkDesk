@@ -1,22 +1,26 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router';
-import  Home  from "./routes/home";
-import  Todos  from "./routes/todos";
+import { Route, Switch } from 'react-router-dom';
+import Home  from "./routes/home";
+import Todos  from "./routes/todos";
 import Notes from "./routes/notes";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div>
       <Switch>
-        <Route path="/">
-          <Home>
+        <Route exact path="/">
+          <Home/>
         </Route>
-        <Route path="/Todos">
-          <Todos>
+        <Route exact path="/todos">
+          <Todos/>
         </Route>
-        <Route path="/Notes">
-          <Notes>
+        <Route exact path="/notes">
+          <Notes/>
+        </Route>
+        <Route>
+          <Home/>
         </Route>
       </Switch>
     </div>

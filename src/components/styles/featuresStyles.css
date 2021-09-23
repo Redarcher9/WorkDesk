@@ -1,0 +1,26 @@
+.featuresclass{
+    background-color:#212529;
+    height: 250px;
+    padding: 20px;
+}
+.featurecard{
+    border-radius: 5px;
+    border: 1px white !important;
+    background-color:#212529 !important;
+    border-style: solid !important;
+    height: 200px;
+    color: white;
+}
+.featurecard:first-child{
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 25px;
+}
+
+#featurebutton{
+    color: white !important;
+    font-size: 15px;
+    text-decoration: none !important;
+    margin: 20px;
+}

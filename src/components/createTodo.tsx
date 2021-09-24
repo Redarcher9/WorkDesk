@@ -1,11 +1,8 @@
-import  {  useState } from "react";
+import  {  useEffect, useState } from "react";
 import { Modal,Button,Form,Col,Row, Container } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 export interface TodoInterface{
   Title:String,
   Description:String,
@@ -60,14 +57,17 @@ export const CreateTodo = ():JSX.Element => {
           console.log("Please make sure every field is filled.")
       }
   };
+  useEffect(()=>{
+
+  },[TodoList])
   
 
   const getTodos =() => {
     var mystorage = window.localStorage;
     var Todolist = JSON.parse(mystorage.getItem("todolist")|| "[]");
     setTodoList(Todolist);
-    debugger;
   }
+
   return (
     <div>
     <Button variant="primary" onClick={handleShow}>
@@ -105,14 +105,15 @@ export const CreateTodo = ():JSX.Element => {
         </Modal.Footer>
       </Modal>
       <Container>
+        <ul>
         {
           TodoList.map(Element =>{
-            <h1>
-              {Element.Title}
-            </h1>
+            return (
+              <li> {Element.Title}  </li>
+            )
           })
         }
-        <h1>Here are your notes</h1>
+        </ul>
       </Container>
     </div>
   );

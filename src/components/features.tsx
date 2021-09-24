@@ -13,11 +13,11 @@ function features():JSX.Element {
                         <Card.Text >
                                 Create your own Todo list to keep a track on your tasks.
                         </Card.Text>
-                        <Button variant="primary">
                             <Link to="/todos" id="featurebutton">
+                                <Button variant="primary">
                                 Get Started
+                                </Button>
                             </Link>
-                        </Button>
                     </Card>
                 </Col>
                 <Col md={{ span: 3, offset: 3 }}>
@@ -26,11 +26,11 @@ function features():JSX.Element {
                         <Card.Text >
                                 Store long notes to keep everything at one place.
                         </Card.Text>
-                        <Button variant="primary">
                             <Link to="/notes" id="featurebutton">
+                                <Button variant="primary">
                                 Get Started
+                                </Button>
                             </Link>
-                        </Button>
                     </Card>
                 </Col>
             </Row>

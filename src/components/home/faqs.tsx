@@ -1,5 +1,5 @@
-import {Accordion, Container,Col,Row} from 'react-bootstrap';
-import "./styles/faqsStyles.css";
+import {Accordion, Container} from 'react-bootstrap';
+import "../styles/faqsStyles.css";
 
 function Faqs():JSX.Element {
     return(

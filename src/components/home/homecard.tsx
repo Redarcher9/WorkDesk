@@ -1,7 +1,5 @@
-import React from 'react';
-import {Card,Button} from 'react-bootstrap';
-import "./styles/homecardStyles.css";
-import { Link } from 'react-router-dom';
+import {Card,} from 'react-bootstrap';
+import "../styles/homecardStyles.css";
 
 function homecard():JSX.Element {
     return(

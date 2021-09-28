@@ -1,9 +1,9 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import Faqs from "../components/faqs";
-import Features from '../components/features';
-import Homecard from "../components/homecard";
-import NavigationBar from "../components/navigationbar";
+import Faqs from "../components/home/faqs";
+import Features from '../components/home/features';
+import Homecard from "../components/home/homecard";
+import NavigationBar from "../components/navbar/navigationbar";
 
 function Home():JSX.Element {
     return(

@@ -1,7 +1,7 @@
-import { Container,Button } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import { withRouter } from "react-router-dom";
-import NavigationBar from "../components/navigationbar";
-import {CreateTodo} from "../components/createTodo";
+import NavigationBar from "../components/navbar/navigationbar";
+import {CreateTodo} from "../components/todos/createTodo";
 
 function Todos():JSX.Element{
     return(

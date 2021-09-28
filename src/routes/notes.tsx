@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import NavigationBar from "../components/navigationbar";
+import NavigationBar from "../components/navbar/navigationbar";
 
 function Notes():JSX.Element {
     return(

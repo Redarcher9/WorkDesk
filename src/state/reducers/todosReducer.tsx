@@ -1,6 +1,6 @@
-import { stateInterface,readactionInterface } from "../interfaces/interfaces";
+import { stateInterface,readActionInterface } from "../interfaces/interfaces";
 
-type Action = readactionInterface 
+type Action = readActionInterface 
 
 const INITIAL_STATE={
     Completed:[],
@@ -22,12 +22,12 @@ const todoReducer = (state:stateInterface = INITIAL_STATE, action: Action) =>{
         case "deleteTodo":
             return {
                 ...state,
-                Inprogress:action.payload.Inprogress,
+                Inprogress:action.payload.Inprogress
             };
         case "doneTodo":
             return {
-                Inprogress:action.payload.Inprogress,
-                Completed:action.payload.Completed
+                Completed:action.payload.Completed,
+                Inprogress:action.payload.Inprogress
             };
         default:
             return state;

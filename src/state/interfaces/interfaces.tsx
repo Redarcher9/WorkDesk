@@ -1,7 +1,7 @@
 export interface TodoInterface{
     Title:String,
     Description:String,
-    Date:String,
+    Date:Date,
     Completed:boolean
   }
 
@@ -10,10 +10,10 @@ export interface stateInterface {
     Inprogress:TodoInterface[]
 }
 
-export interface readactionInterface  {
+export interface readActionInterface  {
     type:String,
     payload:{
-        Completed?:TodoInterface[],
-        Inprogress?:TodoInterface[]
+        Completed:TodoInterface[],
+        Inprogress:TodoInterface[]
     }
 }

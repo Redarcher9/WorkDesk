@@ -5,9 +5,9 @@ export const readTodos = () =>{
 
     var mystorage = window.localStorage;
     var Completed = JSON.parse(mystorage.getItem("completed")|| "[]");
-    var Inprogress = JSON.parse(mystorage.getItem("inprogress")|| "[]");
+    var Inprogress = JSON.parse(mystorage.getItem("inprogress")||"[]");
 
-    var todo={
+    var todolist={
         Completed:Completed,
         Inprogress:Inprogress
     }
@@ -16,7 +16,7 @@ export const readTodos = () =>{
     return (dispatch:Dispatch) =>{
         dispatch({
             type:"readTodo",
-            payload:todo
+            payload:todolist
         })
     }
 }
@@ -75,10 +75,9 @@ export const doneTodo = (todoid:number) =>{
     var Completed = JSON.parse(mystorage.getItem("completed")|| "[]");
     var Inprogress = JSON.parse(mystorage.getItem("inprogress")|| "[]");
 
-    console.log("Inside doneTodo")
 
     Completed.push(Inprogress[todoid])
-    console.log(Completed)
+
 
     Inprogress =Inprogress.filter(function(ele:TodoInterface,index:number){
         if(index!==todoid)

@@ -9,7 +9,7 @@ const INITIAL_STATE={
 
 const todoReducer = (state:stateInterface = INITIAL_STATE, action: Action) =>{
     switch(action.type){
-        case "readTodos":
+        case "readTodo":
             return {
                 Completed:action.payload.Completed,
                 Inprogress:action.payload.Inprogress

@@ -9,7 +9,8 @@ export const readTodos = () =>{
 
     var todolist={
         Completed:Completed,
-        Inprogress:Inprogress
+        Inprogress:Inprogress,
+        selected:1
     }
 
 
@@ -30,7 +31,8 @@ export const addTodo = (todo:TodoInterface) =>{
 
     var todolist={
         Completed:Inprogress,
-        Inprogress:Inprogress
+        Inprogress:Inprogress,
+        selected:1
     }
 
     return (dispatch:Dispatch) => {
@@ -55,7 +57,8 @@ export const deleteTodo = (todoid:number) =>{
 
     var todolist={
         Completed:Inprogress,
-        Inprogress:Inprogress
+        Inprogress:Inprogress,
+        selected:1
     }
 
 
@@ -86,7 +89,8 @@ export const doneTodo = (todoid:number) =>{
 
     var todolist={
         Completed:Completed,
-        Inprogress:Inprogress
+        Inprogress:Inprogress,
+        selected:1
     }
 
     mystorage.setItem('inprogress',JSON.stringify(Inprogress))
@@ -96,6 +100,26 @@ export const doneTodo = (todoid:number) =>{
     return (dispatch:Dispatch) => {
         dispatch({
             type:"doneTodo",
+            payload:todolist
+        })
+    }
+}
+
+export const toggleSideBar = (toggler:number) =>{
+    var mystorage = window.localStorage;
+    var Inprogress = JSON.parse(mystorage.getItem("inprogress")||"[]");
+    var Completed = JSON.parse(mystorage.getItem("completed")|| "[]");
+
+    var todolist={
+        Completed:Completed,
+        Inprogress:Inprogress,
+        selected:toggler
+    }
+    console.log("Inside toggleSideBar")
+    console.log(todolist)
+    return (dispatch:Dispatch) => {
+        dispatch({
+            type:"toggleSidebar",
             payload:todolist
         })
     }

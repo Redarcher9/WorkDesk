@@ -6,8 +6,7 @@ import { actionCreators,State } from "../../state/state";
 import {  Row } from 'react-bootstrap';
 import "../styles/createTodoStyles.css"
 import { deleteTodo, doneTodo } from '../../state/action-creators';
-import { stateInterface } from "../../state/interfaces/interfaces";
-import Button from '@restart/ui/esm/Button';
+import { stateInterface, TodoInterface } from "../../state/interfaces/interfaces";
 
 export const ViewTodos =():JSX.Element =>{
    //REDUX starts here
@@ -17,20 +16,21 @@ export const ViewTodos =():JSX.Element =>{
 
   const [todolist,setTodolist]=useState<stateInterface>({
     Inprogress:[],
-    Completed:[]
+    Completed:[],
+    selected:1
   })
 
+
    useEffect(()=>{
-     setTodolist(globalstate)
+     setTodolist(globalstate);
    },[globalstate]);
-    
+
+   if(todolist.selected == 1){
     return(
         <Container>
-          
-
           <Row>
-        {
-           todolist.Inprogress.map((Element,index)=>{
+        {  
+           globalstate.Inprogress.length > 0 && globalstate.Inprogress.map((Element,index)=>{
             return (
                         <div className="todoItem" key={index} >
                           <div className="text">
@@ -48,9 +48,31 @@ export const ViewTodos =():JSX.Element =>{
           })
         }
           </Row>
-          
         </Container>
     )
+  }
+  else{
+    return(
+      <Container>
+        <Row>
+      {  
+         globalstate.Completed.length > 0 && globalstate.Completed.map((Element,index)=>{
+          return (
+                      <div className="todoItem" key={index} >
+                        <div className="text">
+                          <h4>{Element.Title}</h4>
+                          <p>{Element.Description}</p>
+                        </div>     
+                      </div>
+          )
+        })
+      }
+        </Row>
+      </Container>
+  )
+
+  }
 }
+
 
 export default ViewTodos;

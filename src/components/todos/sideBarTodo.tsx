@@ -38,7 +38,7 @@ export const SideBarTodo = ():JSX.Element => {
 
   //REDUX starts here
   const dispatch = useDispatch();
-  const {addTodo} =bindActionCreators(actionCreators,dispatch);
+  const {addTodo,toggleSideBar} =bindActionCreators(actionCreators,dispatch);
   const globalstate = useSelector((state:State) => state.todo)
 
   const pushtodb=(yourDate:any,yourTitle:any,yourDescription:any) =>{
@@ -105,14 +105,24 @@ export const SideBarTodo = ():JSX.Element => {
         </Row>
         
         <Row className="todoSidebar-buttons">
+          <button onClick={()=>toggleSideBar(1)}>
            <h4>
-            In-Progress   <Badge bg="secondary">{globalstate.Inprogress.length}</Badge>
+            In-Progress
            </h4> 
+           <h4>
+           <Badge bg="secondary">{globalstate.Inprogress.length}</Badge>
+           </h4>
+           </button>
         </Row>
         <Row className="todoSidebar-buttons">
+           <button onClick={()=>toggleSideBar(0)}>
            <h4>
-            Completed      <Badge bg="secondary">{globalstate.Completed.length}</Badge>
+           Completed  
            </h4> 
+           <h4>
+           <Badge bg="secondary">{globalstate.Completed.length}</Badge>
+           </h4>
+           </button>
         </Row>
         <Row style={{height:"600px"}}>
 

@@ -16,6 +16,16 @@
     margin-top: 20px !important;
     font-size: 10px !important;
 }
+.todoSidebar-buttons >button:hover{
+    background-color: #faf5f5 !important;
+}
+.todoSidebar-buttons > button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border:0px white !important;
+    background-color: white;
+}
 
 #todoSidebar-createbutton{
     margin-right: 20px !important;

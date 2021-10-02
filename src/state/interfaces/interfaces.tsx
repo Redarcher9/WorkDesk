@@ -7,13 +7,17 @@ export interface TodoInterface{
 
 export interface stateInterface {
     Completed:TodoInterface[],
-    Inprogress:TodoInterface[]
+    Inprogress:TodoInterface[],
+    selected:number
 }
 
 export interface readActionInterface  {
     type:String,
     payload:{
         Completed:TodoInterface[],
-        Inprogress:TodoInterface[]
+        Inprogress:TodoInterface[],
+        selected:number
     }
 }
+
+

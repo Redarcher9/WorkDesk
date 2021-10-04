@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/workdesk">
           <Home/>
         </Route>
         <Route exact path="/todos">

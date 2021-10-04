@@ -11,7 +11,7 @@ function features():JSX.Element {
                     <Card className="featurecard">
                         <Card.Title > TODO</Card.Title>
                         <Card.Text >
-                                Create your own Todo list to keep a track on your tasks.
+                                Create a Todo list to keep a track on your tasks.
                         </Card.Text>
                             <Link to="/todos" id="featurebutton">
                                 <Button variant="primary">

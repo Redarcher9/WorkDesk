@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/workdesk/static/css/main.8663b4b7.chunk.css",
-    "main.js": "/workdesk/static/js/main.39745060.chunk.js",
-    "main.js.map": "/workdesk/static/js/main.39745060.chunk.js.map",
+    "main.js": "/workdesk/static/js/main.daab195e.chunk.js",
+    "main.js.map": "/workdesk/static/js/main.daab195e.chunk.js.map",
     "runtime-main.js": "/workdesk/static/js/runtime-main.57f07eec.js",
     "runtime-main.js.map": "/workdesk/static/js/runtime-main.57f07eec.js.map",
     "static/css/2.dc1db115.chunk.css": "/workdesk/static/css/2.dc1db115.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.dc1db115.chunk.css",
     "static/js/2.a6289510.chunk.js",
     "static/css/main.8663b4b7.chunk.css",
-    "static/js/main.39745060.chunk.js"
+    "static/js/main.daab195e.chunk.js"
   ]
 }

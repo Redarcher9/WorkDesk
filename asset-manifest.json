@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/workdesk/static/css/main.8663b4b7.chunk.css",
-    "main.js": "/workdesk/static/js/main.daab195e.chunk.js",
-    "main.js.map": "/workdesk/static/js/main.daab195e.chunk.js.map",
+    "main.css": "/workdesk/static/css/main.27e1c32b.chunk.css",
+    "main.js": "/workdesk/static/js/main.8e4f920e.chunk.js",
+    "main.js.map": "/workdesk/static/js/main.8e4f920e.chunk.js.map",
     "runtime-main.js": "/workdesk/static/js/runtime-main.57f07eec.js",
     "runtime-main.js.map": "/workdesk/static/js/runtime-main.57f07eec.js.map",
     "static/css/2.dc1db115.chunk.css": "/workdesk/static/css/2.dc1db115.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.e4676487.chunk.js.map": "/workdesk/static/js/3.e4676487.chunk.js.map",
     "index.html": "/workdesk/index.html",
     "static/css/2.dc1db115.chunk.css.map": "/workdesk/static/css/2.dc1db115.chunk.css.map",
-    "static/css/main.8663b4b7.chunk.css.map": "/workdesk/static/css/main.8663b4b7.chunk.css.map",
+    "static/css/main.27e1c32b.chunk.css.map": "/workdesk/static/css/main.27e1c32b.chunk.css.map",
     "static/js/2.a6289510.chunk.js.LICENSE.txt": "/workdesk/static/js/2.a6289510.chunk.js.LICENSE.txt",
     "static/media/homecardStyles.css": "/workdesk/static/media/home.11f4d326.jpeg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.57f07eec.js",
     "static/css/2.dc1db115.chunk.css",
     "static/js/2.a6289510.chunk.js",
-    "static/css/main.8663b4b7.chunk.css",
-    "static/js/main.daab195e.chunk.js"
+    "static/css/main.27e1c32b.chunk.css",
+    "static/js/main.8e4f920e.chunk.js"
   ]
 }

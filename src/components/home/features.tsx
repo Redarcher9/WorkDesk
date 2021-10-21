@@ -1,8 +1,26 @@
 import {Card,Button, Container, Row,Col} from 'react-bootstrap';
+import { useSelector,useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
-import "../styles/featuresStyles.css"
+import { RootState } from '../../redux/store/store';
+import { useEffect } from "react";
+import {readTodo} from "../../redux/slice/todoSlice";
 
-function features():JSX.Element {
+
+
+function Features():JSX.Element {
+
+    const todos = useSelector(
+        (state:RootState) => state.todos
+    );
+    
+    
+    const dispatch = useDispatch();
+    const handleClick =()=>{
+        dispatch(readTodo())
+        console.log("Features Click Button =>" )
+        console.log(todos)
+    }
+    
     return(
         <div className="featuresclass">
         <Container>
@@ -34,9 +52,12 @@ function features():JSX.Element {
                     </Card>
                 </Col>
             </Row>
+            <Row>
+                <Button onClick={handleClick}>Click Me</Button>
+            </Row>
         </Container>
         </div>
     )
 }
 
-export default features;
+export default Features;

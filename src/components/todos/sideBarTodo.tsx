@@ -3,12 +3,20 @@ import { Modal,Button,Form,Col,Row } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import Badge from 'react-bootstrap/Badge';
 import { useDispatch,useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
 import "react-datepicker/dist/react-datepicker.css";
-import "../styles/createTodoStyles.css"
-import { actionCreators,State } from "../../state/state";
+import "../styles/createTodoStyles.css";
+import { RootState } from '../../redux/store/store';
+import {readTodo,toogleSidebar} from "../../redux/slice/todoSlice";
+import { addTodo } from "../../db/todos/addTodo";
 
 export const SideBarTodo = ():JSX.Element => {
+
+  //REDUX starts here
+  const todos = useSelector(
+    (state:RootState) => state.todos
+  );
+
+  const dispatch = useDispatch();
 
   const [startDate, setStartDate] = useState(new Date());
   // eslint-disable-next-line
@@ -36,23 +44,17 @@ export const SideBarTodo = ():JSX.Element => {
     pushtodb(startDate,Title,Description);
   }
 
-  //REDUX starts here
-  const dispatch = useDispatch();
-  const {addTodo,toggleSideBar} =bindActionCreators(actionCreators,dispatch);
-  const globalstate = useSelector((state:State) => state.todo)
-
   const pushtodb=(yourDate:any,yourTitle:any,yourDescription:any) =>{
-
     if(yourDate!=="" || yourTitle!=="" || yourDescription!=="" )
       {  
           const Todo = {
             Title:Title,
             Description:Description,
-            Date:startDate,
-            Completed:false
+            Date:startDate
           }  
-
-          addTodo(Todo)
+          addTodo(Todo);
+          dispatch(readTodo());
+          console.log(todos)
           handleClose()
       }
       else{
@@ -60,7 +62,9 @@ export const SideBarTodo = ():JSX.Element => {
       }
   };
 
-
+  const toogler =(select:number) =>{
+    dispatch(toogleSidebar(select))
+  }
 
   return (
       <div>
@@ -105,22 +109,22 @@ export const SideBarTodo = ():JSX.Element => {
         </Row>
         
         <Row className="todoSidebar-buttons">
-          <button onClick={()=>toggleSideBar(1)}>
+          <button onClick={()=>toogler(1)}>
            <h4>
             In-Progress
            </h4> 
            <h4>
-           <Badge bg="secondary">{globalstate.Inprogress.length}</Badge>
+           <Badge bg="secondary">{todos.Inprogress.length}</Badge>
            </h4>
            </button>
         </Row>
         <Row className="todoSidebar-buttons">
-           <button onClick={()=>toggleSideBar(0)}>
+           <button onClick={()=>toogler(0)}>
            <h4>
            Completed  
            </h4> 
            <h4>
-           <Badge bg="secondary">{globalstate.Completed.length}</Badge>
+           <Badge bg="secondary">{todos.Completed.length}</Badge>
            </h4>
            </button>
         </Row>

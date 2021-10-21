@@ -1,46 +1,54 @@
 import Container from 'react-bootstrap/Container';
 import {  useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators,State } from "../../state/state";
 import {  Row } from 'react-bootstrap';
-import "../styles/createTodoStyles.css"
-import { deleteTodo, doneTodo } from '../../state/action-creators';
+import "../styles/createTodoStyles.css";
 import { stateInterface, TodoInterface } from "../../state/interfaces/interfaces";
+import { RootState } from '../../redux/store/store';
+import {readTodo} from "../../redux/slice/todoSlice";
+import { deleteTodo,doneTodo } from "../../db/todos/";
 
 export const ViewTodos =():JSX.Element =>{
-   //REDUX starts here
+   
+  //REDUX starts here
+  const todos = useSelector(
+    (state:RootState) => state.todos
+  );
+
+  useEffect(()=>{
+    dispatch(readTodo())
+  },[])
+
   const dispatch = useDispatch();
-  const {deleteTodo,doneTodo} =bindActionCreators(actionCreators,dispatch);
-  const globalstate = useSelector((state:State) => state.todo)
+    
+  const deleteTodoItem = (index:number)=>{
+    deleteTodo(index);
+    dispatch(readTodo())
+  }
 
-  const [todolist,setTodolist]=useState<stateInterface>({
-    Inprogress:[],
-    Completed:[],
-    selected:1
-  })
+  const doneTodoItem = (index:number)=>{
+    doneTodo(index);
+    dispatch(readTodo())
+  }
+  
+   
 
-
-   useEffect(()=>{
-     setTodolist(globalstate);
-   },[globalstate]);
-
-   if(todolist.selected == 1){
+   if(todos.selected == 1){
     return(
         <Container>
           <Row>
         {  
-           globalstate.Inprogress.length > 0 && globalstate.Inprogress.map((Element,index)=>{
+           todos.Inprogress.length > 0 && todos.Inprogress.map((Element,index)=>{
             return (
                         <div className="todoItem" key={index} >
                           <div className="text">
                             <h4>{Element.Title}</h4>
                             <p>{Element.Description}</p>
                           </div>     
-                          <button onClick={()=>deleteTodo(index)}>
+                          <button onClick={()=>deleteTodoItem(index)}>
                             Delete
                           </button>
-                          <button onClick={()=>doneTodo(index)}>
+                          <button onClick={()=>doneTodoItem(index)}>
                             Done
                           </button>
                         </div>
@@ -56,7 +64,7 @@ export const ViewTodos =():JSX.Element =>{
       <Container>
         <Row>
       {  
-         globalstate.Completed.length > 0 && globalstate.Completed.map((Element,index)=>{
+         todos.Completed.length > 0 && todos.Completed.map((Element,index)=>{
           return (
                       <div className="todoItem" key={index} >
                         <div className="text">

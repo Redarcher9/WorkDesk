@@ -1,5 +1,5 @@
 import Container from 'react-bootstrap/Container';
-import {  useEffect, useState } from "react";
+import {  useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import {  Row } from 'react-bootstrap';
 import "../styles/createTodoStyles.css";
@@ -14,11 +14,13 @@ export const ViewTodos =():JSX.Element =>{
     (state:RootState) => state.todos
   );
 
-  useEffect(()=>{
-    dispatch(readTodo())
-  },[])
 
   const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(readTodo());
+  },[])
+
     
   const deleteTodoItem = (index:number)=>{
     deleteTodo(index);

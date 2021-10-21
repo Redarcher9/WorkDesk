@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { Type } from "typescript";
 import todoreducer from "../slice/todoSlice";
 
 

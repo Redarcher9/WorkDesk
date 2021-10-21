@@ -1,5 +1,5 @@
 import { createSlice ,PayloadAction} from "@reduxjs/toolkit";
-import { TodoInterface, todoState,todoDb } from "../interface/todo";
+import { TodoInterface, todoState } from "../interface/todo";
 
 const initialState :todoState= {
     Completed:[],

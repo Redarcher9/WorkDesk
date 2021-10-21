@@ -5,7 +5,6 @@ import { useDispatch,useSelector } from "react-redux";
 import "react-datepicker/dist/react-datepicker.css";
 import "../styles/createTodoStyles.css";
 import { RootState } from '../../redux/store/store';
-import {readTodo} from "../../redux/slice/todoSlice";
 
 export const StatsTodo = ():JSX.Element => {
   //REDUX starts here
@@ -14,7 +13,6 @@ export const StatsTodo = ():JSX.Element => {
     (state:RootState) => state.todos
   );
 
-  const dispatch = useDispatch();
 
   const getPercentage =():number=> {
     const percentage = Math.round(todos.Completed.length/(todos.Completed.length + todos.Inprogress.length)*100);
@@ -23,8 +21,6 @@ export const StatsTodo = ():JSX.Element => {
     else
         return Math.round(percentage)
   }
-  useEffect(()=>{
-   },[]);
 
 
   return (

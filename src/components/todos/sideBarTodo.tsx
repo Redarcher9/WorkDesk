@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "../styles/createTodoStyles.css";
 import { RootState } from '../../redux/store/store';
 import {readTodo,toogleSidebar} from "../../redux/slice/todoSlice";
-import { addTodo } from "../../db/todos/addTodo";
+import { addTodo } from "../../db/todos";
 
 export const SideBarTodo = ():JSX.Element => {
 

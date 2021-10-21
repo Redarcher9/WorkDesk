@@ -3,7 +3,6 @@ import {  useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import {  Row } from 'react-bootstrap';
 import "../styles/createTodoStyles.css";
-import { stateInterface, TodoInterface } from "../../state/interfaces/interfaces";
 import { RootState } from '../../redux/store/store';
 import {readTodo} from "../../redux/slice/todoSlice";
 import { deleteTodo,doneTodo } from "../../db/todos/";
